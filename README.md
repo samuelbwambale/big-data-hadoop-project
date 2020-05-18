@@ -58,7 +58,7 @@ After copying the required files to the container, now we can run the Hadoop com
 cd /usr/local/hadoop
 ```
 
-## Create the input folders from where the input files will be read for processing. 
+### Create the input folders from where the input files will be read for processing
 Then we can execute hadoop commands using 'bin/hadoop' to create the project structure inside the Hadoop Distributed File System (HDFS). Please note that each time you terminate the Docker Container all your modifications to the HDFS are lost and you have to repeat all those steps!
 ```
 bin/hadoop fs -ls  /
@@ -123,7 +123,9 @@ The output will be the same as that without the in-mapper but with less processi
 
 
 ## Relative Frequency Computation
-Next you will create a crystal ball to predict events that may happen once a certain event happened. For this project we assume testData1.txt and testData1.txt contain historical customer data of two different customers. Each record contains the productIDs of all the product bought by the customer. We want to predict the likelihood of buying a product with product ID B after they have bought a product with productID A. We can predict this from the relative frequencies of productID B in the window of productID A. Let the window of X, N(X) be set of all productIDs after X and before the next X. In the following Relative Frequency Algorithms, we will use two files: testData1.txt and testData2.txt as our input data. Each file is a record containing the product IDs of all the product bought by a single customer.
+Next you will create a crystal ball to predict events that may happen once a certain event happened. For this project we assume testData1.txt and testData1.txt contain historical customer data of two different customers. Each record contains the productIDs of all the product bought by the customer. We want to predict the likelihood of buying a product with product ID B after they have bought a product with productID A. 
+
+We can predict this from the relative frequencies of productID B in the window of productID A. Let the window of X, N(X) be set of all productIDs after X and before the next X. In the following Relative Frequency Algorithms, we will use two files: testData1.txt and testData2.txt as our input data. Each file is a record containing the product IDs of all the product bought by a single customer. The prodcutIDs are listed in the order the customer bought the products.
 
 ### Pair Approach
 In package Part2_PairApproach there is an implementation of the `Pair` approach to calculate the relative frequencies. 
