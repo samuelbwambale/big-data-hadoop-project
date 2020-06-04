@@ -8,7 +8,7 @@ In this project, we will set up a single node Hadoop cluster and run the impleme
 - Relative Frequency Computation Algorithm using three different approaches: Pair, Stripe and Hybrid
 
 ## Dependencies
-- Docker version: v18
+- Docker v18
 - Eclipse (for Scala) as IDE
 - Java JDK 1.7
 
@@ -23,10 +23,9 @@ To be able to run the Jar file inside Hadoop, make sure you change your Java Env
 
 
 Install Hadoop Image on Docker
-Ensure that you have docker installed using by running `docker -v` command. Else install Docker from official [website](https://docs.docker.com/install/)
+Ensure that you have docker installed by running `docker -v` command. Else install Docker from official [website](https://docs.docker.com/install/)
 
-Install Hadoop Image on Docker using `docker pull sequenceiq/hadoop-docker` command
-After pulling the image, try to start the container using the following command:\
+Install Hadoop Image on Docker using `docker pull sequenceiq/hadoop-docker` command. After pulling the image, try to start the container using the following command
 ```
 docker run -it sequenceiq/hadoop-docker:2.7.0 /etc/bootstrap.sh -bash
 ```
@@ -39,7 +38,7 @@ docker ps
 ## Sharing files (JAR and Input Files) between your machine and the Docker container
 For you the be able to run Hadoop commands, like hadoop jar, you need to copy some files from your local machine to that Docker Container containing Hadoop. To do this, you have to know its Container ID as it is randomly generated each time you run it. To see it, run`docker ps` in the new terminal different from the docker container terminal
 
-The input files to be used for this project are in the files folder in the project. Download them to your local machine and copy them one by one to the hadoop container.
+The input files to be used for this project are found in the `files` folder of this project. Download them to your local machine and copy them one by one to the hadoop container.
 ```
 docker cp access_log.txt docker-container-id:/usr/local/hadoop
 docker cp testData1.txt docker-container-id:/usr/local/hadoop
